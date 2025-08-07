@@ -17,7 +17,7 @@ res = requests.get(url='https://icanhazdadjoke.com/search', headers=header)
 number_of_jokes = 700
 number_of_jokes_per_page = res.json()['limit']
 amnt_pages_to_fetch = number_of_jokes/number_of_jokes_per_page
-the_file = open('dad_jokes.tsv', 'w', encoding='utf-8', newline='') # We are now writing the jokes to a csv file instead
+the_file = open('dad_jokes.tsv', 'w', encoding='utf-8', newline='')
 writer = csv.writer(the_file, delimiter='\t', quoting=csv.QUOTE_MINIMAL)
 writer.writerow(['id', 'joke'])
 # the_file.write('\n')

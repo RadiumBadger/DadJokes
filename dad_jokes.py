@@ -14,6 +14,14 @@ def tell_me_a_dad_joke():
     dad_jokes = read_dad_joke_tsv_file()
 
     today_as_day_of_year = datetime.now().timetuple().tm_yday
+    # We now have dad_jokes as a list of list. For example,
+    # [[1, 'aaa'], [2, 'bbb'], [3, 'ccc']].
+    # Now, lets assume today is 3rd of Jan, so today_as_day_of_year would be 3
+    # therefore, dad_jokes[today_as_day_of_year] would be dad_jokes[3]
+    # Now, looking at our dad jokes from the above comment, dad_jokes[3] would give us
+    # a list, that is, [3, 'ccc']. This is because dad_jokes is a LIST OF LISTS, and
+    # we looked for element 3 in the OUTER list.
+    # Then we do a [1] after that, because all we want is the joke and not the ID
     return dad_jokes[today_as_day_of_year][1]
 
 def tell_me_a_random_dad_joke():
